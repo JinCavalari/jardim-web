@@ -1,0 +1,205 @@
+:root {
+    --color-primary: #14ff24;
+    --color-bg: rgb(20, 20, 20);
+    --color-bg-opacity: rgba(30, 30, 30, 0.8);
+}
+
+@font-face {
+    font-family: spyagency;
+    src: url('../spyagency.ttf');
+}
+
+body {
+    font-family: spyagency;
+    margin: 0px;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: var(--color-bg);
+}
+
+/* Para Chrome, Edge e Safari */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-opacity);
+    /* Cor do fundo/trilho */
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    /* Cor da alça que se move */
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-bg-opacity);
+    border-radius: 0.5rem;
+    transition: 2s;
+    border-bottom: 0.1rem solid var(--color-primary);
+}
+
+#container {
+    width: 100%;
+    margin: auto;
+}
+
+#jar-header {
+    animation: bright 2.5s linear infinite;
+    color: var(--color-primary);
+    border-bottom: .1rem solid var(--color-primary);
+    border-top: .1rem solid var(--color-primary);
+    margin-bottom: 5rem;
+    background-image: url("../images/raios.gif");
+    background-size: cover;
+    background-position: bottom;
+}
+
+@keyframes bright {
+    0% {
+        text-shadow:
+            0 0 0.25rem #000,
+            0 0 0.5rem var(--color-primary);
+    }
+
+    40% {
+        text-shadow:
+            0 0 0.5rem #000,
+            0 0 1rem var(--color-primary);
+    }
+
+    60% {
+        text-shadow:
+            0 0 1rem #000,
+            0 0 2rem var(--color-primary);
+    }
+
+    100% {
+        text-shadow:
+            0 0 0.25rem #000,
+            0 0 0.5rem var(--color-primary);
+    }
+}
+
+.summary,
+.preamble,
+.main{
+    width: 80vw;
+    margin: auto;
+}
+
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements {
+    transition: .5s;
+    color: var(--color-bg-opacity);
+    border-radius: 1rem;
+    padding-left: calc(0.3rem + 1rem);
+    padding-right: calc(0.3rem + 1rem);
+}
+
+.summary:hover,
+.preamble:hover,
+.explanation:hover,
+.participation:hover,
+.benefits:hover,
+.requirements:hover {
+    color: var(--color-primary);
+    text-shadow:
+        0 0 0.5rem #000,
+        0 0 1rem var(--color-primary);
+    border-left: 0.3rem solid var(--color-primary);
+    border-right: 0.3rem solid var(--color-primary);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.summary:hover a,
+.preamble:hover a,
+.explanation:hover a,
+.participation:hover a,
+.benefits:hover a,
+.requirements:hover a {
+    color: var(--color-primary);
+    transition: .25s;
+}
+
+.footer {
+    border-bottom: .1rem solid var(--color-primary);
+    border-top: .1rem solid var(--color-primary);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 2.5rem 0rem;
+}
+
+.footer a {
+    color: var(--color-primary);
+    padding: 0.5rem;
+    border-bottom: 0.1rem solid var(--color-primary);
+    border-left: 0.1rem solid var(--color-primary);
+    border-top: 0.1rem solid var(--color-primary);
+}
+
+.sidebar {
+    color: var(--color-primary);
+    position: fixed;
+    display: block;
+    top: 0px;
+    /* min-width: 50vw;
+    max-width: calc(90vw - 3.5rem); */
+    width: 570px;
+    right: -570px;
+    background-color: var(--color-bg);
+    height: 100vh;
+    border-left: 0.5rem solid var(--color-primary);
+    border-radius: 3rem 0rem 0rem 3rem;
+    overflow-y: auto;
+    transition: 0.25s;
+    padding-left: 3rem;
+}
+
+.sidebar:hover {
+    right: 0px;
+}
+
+
+.sidebar a {
+    color: var(--color-primary);
+    padding: 0.5rem;
+    border-bottom: 0.1rem solid var(--color-primary);
+    border-left: 0.1rem solid var(--color-primary);
+    border-top: 0.1rem solid var(--color-primary);
+    display: inline-block;
+
+}
+
+.sidebar ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0px;
+}
+
+.sidebar ul li {
+    margin: 1rem 0px;
+}
+
+.archives,
+.resources {
+    border-top: 0.1rem solid var(--color-primary);
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: calc(570px + 5rem)){
+    .sidebar{
+        width: 200px;
+        right: -200px;
+    }
+}
